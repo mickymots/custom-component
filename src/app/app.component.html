@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <form [formGroup]="pageForm">
+    <p>Form value: {{ pageForm.value | json }}</p>
+    <p>Form status: {{ pageForm.status | json }}</p>
+    <address  label="Line 1" id="address" formControlName="address"> </address>
+  </form>
+</div>

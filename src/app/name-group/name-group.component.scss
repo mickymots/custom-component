@@ -1,0 +1,45 @@
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+label.required:after {
+  content: " *";
+  color: red;
+}
+
+.input-error {
+    position: absolute;
+    right: 0;
+    display: block;
+    font-size: 12px;
+    bottom: -20px;
+    color: indianred;
+}
+
+.error {
+    border: 1px solid rgba(244, 67, 54, 0.5);
+}
+
+.required {
+    position: relative;
+}
+
+.required:after {
+    content: '*';
+    color: #F44336;
+    font-size: 18px;
+    padding-left: 3px;
+    position: absolute;
+    top: -2px;
+    right: -10px;
+}
+
+.date-control:focus ~ .input-group-addon {
+    background-color: #0275d8;
+    color: #fff;
+}
+
+.radio-inline {
+    padding-bottom: 5px;
+}

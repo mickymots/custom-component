@@ -1,0 +1,17 @@
+<template #customItemTemplate let-model="item" let-index="index">
+  <h5>{{model.line1}}, {{model.line2}}, {{ model.postcode}}</h5>
+</template>
+
+<div class="form-group">
+  <label for="postcode" class="control-label"> Postcode : </label>
+  <input type="text" [(ngModel)]="postcode" [typeahead]="dataSource" (typeaheadLoading)="changeTypeaheadLoading($event)" (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+    typeaheadOptionsLimit="7" typeaheadOptionField="name" placeholder="Enter 5 Characters to initiate search..." [typeaheadItemTemplate]="customItemTemplate"
+    class="form-control" typeaheadMinLength="5" typeaheadWaitMs="500" (typeaheadOnSelect)="selected($event)" name="postcode"
+    id="postcode" class="cssClass || form-control" />
+  <div *ngIf="typeaheadLoading===true">
+    <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+  </div>
+  <div *ngIf="typeaheadNoResults===true" class="" style="">
+    <i class="glyphicon glyphicon-remove"></i> No Results Found
+  </div>
+</div>

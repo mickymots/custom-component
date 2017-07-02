@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label class="control-label" [class.required]="required">
+    {{label}}
+    <app-help *ngIf="help" [field]="text"></app-help>
+  </label> 
+ <input type="text"
+           [id]="id"           
+           class="form-control"
+           [formControl]="childControl"/>  
+  <span *ngIf="errorMessage !== null" class="input-error">{{errorMessage}}</span>        
+</div>   
